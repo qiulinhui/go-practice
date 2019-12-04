@@ -1,4 +1,4 @@
-// Sample test to show how to write a basic unit table test.
+// 这个示例程序展示如何写一个基本的表组测试
 package listing08
 
 import (
@@ -9,8 +9,8 @@ import (
 const checkMark = "\u2713"
 const ballotX = "\u2717"
 
-// TestDownload validates the http Get function can download
-// content and handles different status conditions properly.
+// TestDownload 确认 http 包的 Get 函数可以下载内容
+// 并正确处理不同的状态
 func TestDownload(t *testing.T) {
 	var urls = []struct {
 		url        string

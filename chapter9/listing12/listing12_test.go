@@ -1,5 +1,5 @@
-// Sample test to show how to mock an HTTP GET call internally.
-// Differs slightly from the book to show more.
+// 这个示例程序展示如何内部模仿 HTTP GET 调用
+// 与本书之前的例子有些差别
 package listing12
 
 import (
@@ -13,7 +13,7 @@ import (
 const checkMark = "\u2713"
 const ballotX = "\u2717"
 
-// feed is mocking the XML document we except to receive.
+// feed 模仿了我们期望接收的 XML 文档
 var feed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss>
 <channel>
@@ -29,7 +29,7 @@ var feed = `<?xml version="1.0" encoding="UTF-8"?>
 </channel>
 </rss>`
 
-// mockServer returns a pointer to a server to handle the get call.
+// mockServer 返回用来处理请求的服务器的指针
 func mockServer() *httptest.Server {
 	f := func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(200)
@@ -40,8 +40,8 @@ func mockServer() *httptest.Server {
 	return httptest.NewServer(http.HandlerFunc(f))
 }
 
-// TestDownload validates the http Get function can download content
-// and the content can be unmarshaled and clean.
+// TestDownload 确认 http 包的 Get 函数可以下载内容
+// 并且内容跟可以被正确地反序列化并关闭
 func TestDownload(t *testing.T) {
 	statusCode := http.StatusOK
 

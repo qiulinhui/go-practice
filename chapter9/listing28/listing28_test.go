@@ -1,6 +1,6 @@
-// Sample benchmarks to test which function is better for converting
-// an integer into a string. First using the fmt.Sprintf function,
-// then the strconv.FormatInt function and then strconv.Itoa.
+// 用来检测要将整数值转为字符串，使用哪个函数会更好的基准
+// 测试示例。先使用 fmt.Sprintf 函数，然后使用
+// strconv.FormatInt 函数，最后使用 strconv.Itoa
 package listing05_test
 
 import (
@@ -9,8 +9,8 @@ import (
 	"testing"
 )
 
-// BenchmarkSprintf provides performance numbers for the
-// fmt.Sprintf function.
+// BenchmarkSprintf 对 fmt.Sprintf 函数
+// 进行基准测试
 func BenchmarkSprintf(b *testing.B) {
 	number := 10
 
@@ -21,8 +21,8 @@ func BenchmarkSprintf(b *testing.B) {
 	}
 }
 
-// BenchmarkFormat provides performance numbers for the
-// strconv.FormatInt function.
+// BenchmarkFormat 对 strconv.FormatInt 函数
+// 进行基准测试
 func BenchmarkFormat(b *testing.B) {
 	number := int64(10)
 
@@ -33,8 +33,8 @@ func BenchmarkFormat(b *testing.B) {
 	}
 }
 
-// BenchmarkItoa provides performance numbers for the
-// strconv.Itoa function.
+// BenchmarkItoa 对 strconv.Itoa 函数
+// 进行基准测试
 func BenchmarkItoa(b *testing.B) {
 	number := 10
 

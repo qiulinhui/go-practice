@@ -1,5 +1,5 @@
-// Sample test to show how to test the execution of an
-// internal endpoint.
+// 这个示例程序展示如何测试时内部服务端点
+// 的执行效果
 package handlers_test
 
 import (
@@ -18,7 +18,7 @@ func init() {
 	handlers.Routes()
 }
 
-// TestSendJSON testing the sendjson internal endpoint.
+// TestSendJSON 测试 /sendjson 内部服务端点
 func TestSendJSON(t *testing.T) {
 	t.Log("Given the need to test the SendJSON endpoint.")
 	{

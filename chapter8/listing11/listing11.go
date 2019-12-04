@@ -1,4 +1,4 @@
-// This sample program demonstrates how to create customized loggers.
+// 这个示例程序展示如何创建定制的日志记录器
 package main
 
 import (
@@ -9,10 +9,14 @@ import (
 )
 
 var (
-	Trace   *log.Logger // Just about anything
-	Info    *log.Logger // Important information
-	Warning *log.Logger // Be concerned
-	Error   *log.Logger // Critical problem
+	// Trace 记录所有日志
+	Trace *log.Logger
+	// Info 重要的信息
+	Info *log.Logger
+	// Warning 需要注意的信息
+	Warning *log.Logger
+	// Error 非常严重的问题
+	Error *log.Logger
 )
 
 func init() {

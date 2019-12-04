@@ -1,4 +1,4 @@
-// This sample program demonstrates how to marshal a JSON string.
+// 这个示例程序展示如何序列化 JSON 字符串
 package main
 
 import (
@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	// Create a map of key/value pairs.
+	// 创建一个保存键值对的映射
 	c := make(map[string]interface{})
 	c["name"] = "Gopher"
 	c["title"] = "programmer"
@@ -17,7 +17,7 @@ func main() {
 		"cell": "415.555.5555",
 	}
 
-	// Marshal the map into a JSON string.
+	// 将这个映射序列化到 JSON 字符串
 	data, err := json.MarshalIndent(c, "", "    ")
 	if err != nil {
 		log.Println("ERROR:", err)

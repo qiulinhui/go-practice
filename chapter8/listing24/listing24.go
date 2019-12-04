@@ -1,5 +1,5 @@
-// This sample program demonstrates how to decode a JSON response
-// using the json package and NewDecoder function.
+// 这个示例程序展示如何使用 json 包和 NewDecoder 函数
+// 来解码 JSON 响应
 package main
 
 import (
@@ -10,7 +10,7 @@ import (
 )
 
 type (
-	// gResult maps to the result document received from the search.
+	// gResult 映射到从搜索拿到的结果文档
 	gResult struct {
 		GsearchResultClass string `json:"GsearchResultClass"`
 		UnescapedURL       string `json:"unescapedUrl"`
@@ -22,7 +22,7 @@ type (
 		Content            string `json:"content"`
 	}
 
-	// gResponse contains the top level document.
+	// gResponse 包含顶级的结果文档
 	gResponse struct {
 		ResponseData struct {
 			Results []gResult `json:"results"`
@@ -33,7 +33,7 @@ type (
 func main() {
 	uri := "http://ajax.googleapis.com/ajax/services/search/web?v=1.0&rsz=8&q=golang"
 
-	// Issue the search against Google.
+	// 向 Google 发起搜索
 	resp, err := http.Get(uri)
 	if err != nil {
 		log.Println("ERROR:", err)
@@ -41,7 +41,7 @@ func main() {
 	}
 	defer resp.Body.Close()
 
-	// Decode the JSON response into our struct type.
+	// 将 JSON 响应解码到结构类型
 	var gr gResponse
 	err = json.NewDecoder(resp.Body).Decode(&gr)
 	if err != nil {

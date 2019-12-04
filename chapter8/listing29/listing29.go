@@ -1,4 +1,4 @@
-// This sample program demonstrates how to decode a JSON string.
+// 这个示例程序展示如何解码 JSON 字符串
 package main
 
 import (
@@ -7,7 +7,7 @@ import (
 	"log"
 )
 
-// JSON contains a sample string to unmarshal.
+// JSON 包含要反序列化的样例字符串
 var JSON = `{
 	"name": "Gopher",
 	"title": "programmer",
@@ -18,7 +18,7 @@ var JSON = `{
 }`
 
 func main() {
-	// Unmarshal the JSON string into our map variable.
+	// 将 JSON 字符串反序列化到 map 变量
 	var c map[string]interface{}
 	err := json.Unmarshal([]byte(JSON), &c)
 	if err != nil {
